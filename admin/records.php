@@ -166,7 +166,7 @@
                   $to = $_POST['to'];
                   $fromNew = date('Y-m-d',strtotime($from));
                   $toNew = date('Y-m-d',strtotime($to));
-                  $Equery = "select student_data.id,student_data.FULLNAME,student_data.EMAIL,selected_courses.coursename,student_data.register_date FROM student_data JOIN selected_courses ON student_data.ID=selected_courses.ID
+                  $Equery = "select student_data.id,student_data.FIRSTNAME,student_id.LASTNAME,student_data.GENDER,selected_courses.coursename,student_data.register_date FROM student_data JOIN selected_courses ON student_data.ID=selected_courses.ID
                             WHERE student_data.register_date BETWEEN '$fromNew' AND '$toNew'";
                             
                             //DEBUGGING
@@ -174,7 +174,7 @@
                             // This code is strictly for debugging, do not put final changes in here
                             // if final changes are commited to the code, death will be upon us
                             $result = mysqli_query($mysqli,$Equery);
-                            while($addrow = mysqli_fetch_array($result)){
+                            while($addrow = mysqli_query($result)){
                               $newDate = date('d-M-Y',strtotime($addrow[4]));
                               echo "<tr>";
                               echo "<td>$addrow[0]</td>";

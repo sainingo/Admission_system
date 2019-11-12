@@ -6,7 +6,7 @@ session_start();
 
 $databaseHost = "localhost";
 $databaseUsername = "root";
-$databasePassword = "";
+$databasePassword = "PhpAdmin@12";
 $databaseName = "admission2019";
 	
 	$conn = new PDO("mysql:host=$databaseHost;dbname=$databaseName;", $databaseUsername, $databasePassword);	

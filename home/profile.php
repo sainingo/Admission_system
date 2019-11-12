@@ -85,10 +85,7 @@
                                         <input type="email" name="email" class="form-control" value= "<?php echo $details[9]; ?> " disabled>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label>Registration Date</label>
-                                        <input type="text" name="reg_date" class="form-control" value= "<?php echo $details[11]; ?> " disabled>
-                                    </div>
+                                   
                                 </div>
                             </div>
                         </div>

@@ -23,32 +23,25 @@
         if(isset($_POST['submitEducationDetails_BE'])){
             //start hardcoding in variables
             //ssc
-            $sscboardbe = $_POST['sscboardbe'];
-            $sscyearpassbe = $_POST['sscyearpassbe'];
-            $sscperbe = $_POST['sscperbe'];
-            $sscgradebe = $_POST['sscgradebe'];
-            //hsc
-            $hscboardbe = $_POST['hscboardbe'];
-            $hscyearpassbe = $_POST['hscyearpassbe'];
-            $hscpcm = $_POST['hscpcm'];            
-            $hscperbe = $_POST['hscperbe'];
-            $hscgradebe = $_POST['hscgradebe'];
-            //basic
-            $rollno = $_POST['rollnobe'];
-            $phybe = $_POST['phybe'];
-            $chembe = $_POST['chembe'];
-            $matbe = $_POST['matbe'];
-            $totbe = $_POST['totbe'];
-            //acpc
-            $rankbe = $_POST['rankbe'];
-            $c1be = $_POST['c1be'];
-            $c2be = $_POST['c2be'];
-            $acpcregbe = $_POST['acpcregbe'];
-            $acpcmeritbe = $_POST['acpcmeritbe'];
-            $p1 = $_POST['p1'];
-            $p2 = $_POST['p2'];
-            $p3 = $_POST['p3'];
-            $p4 = $_POST['p4'];
+            $highSchool = $_POST['highSchool'];
+            $highGrade = $_POST['highGrade'];
+            $otherSchool = $_POST['otherSchool'];
+            $quali = $_POST['qual'];
+            $indexNo = $_POST['indexNo'];
+            $math = $_POST['math'];
+            $eng = $_POST['eng'];
+            $kisw = $_POST['kisw'];
+            $phyc = $_POST['phyc'];
+            $chem = $_POST['chem'];
+            $bio = $_POST['bio'];
+            $geo = $_POST['geo'];
+            $hist = $_POST['hist'];
+            $cre = $_POST['cre'];
+            $french = $_POST['french'];
+            $comp_sci = $_POST['comp_sci'];
+            $home_sci = $_POST['home_sci'];
+            $agri = $_POST['agri'];
+            $biz = $_POST['biz'];
             /* End Hardcoding */
             //queries_setting user ID
             $id = $details[0];
@@ -56,7 +49,7 @@
             $conn = new PDO("mysql:host=$databaseHost;dbname=$databaseName;", $databaseUsername, $databasePassword);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             //Query to check education information
-            $eQuery = $conn->prepare( "SELECT `ID` FROM `education_information_be` WHERE `ID` = ?" );			
+            $eQuery = $conn->prepare( "SELECT `ID` FROM `education_information` WHERE `ID` = ?" );			
 			$eQuery->bindValue(1, $details[0]);
             $eQuery->execute();
             if($eQuery->rowCount() > 0 )
@@ -66,18 +59,18 @@
 			}
 			else{
 			    try{ //Inserting Details
-                    $insertEducationQry_be = "INSERT INTO education_information_be (ID,ssc_school,ssc_year,ssc_percentage,ssc_class,hsc_school,hsc_year,hsc_pcm,hsc_percentage,hsc_class,roll_no,physics,chemistry,maths,total,jee_main_rank,contact_01,contact_02,acpc_no,acpc_merit,p1,p2,p3,p4,isAvailable) 
+                    $insertEducationQry_be = "INSERT INTO education_information (ID,high_school,high_school_Grade,other_school,qualification,index_no,math,english,kiswahili,physics,chemistry,business,agri,comp_sci,biology,cre,history,geo,french,home_sci,isActive) 
                     
-                    VALUES ('$id','$sscboardbe','$sscyearpassbe','$sscperbe','$sscgradebe','$hscboardbe','$hscyearpassbe','$hscpcm','$hscperbe','$hscgradebe','$rollno','$phybe','$chembe','$matbe','$totbe','$rankbe','$c1be','$c2be','$acpcregbe','$acpcmeritbe','$p1','$p2','$p3','$p4',1)";
+                    VALUES ('$id','$highSchool','$highGrade','$otherSchool','$quali','$indexNo','$math','$eng','$kisw','$phyc','$chem','$biz','$agri','$comp_sci','$bio','$cre','$hist','$geo','$french','$home_sci',1)";
                 if ($conn->query($insertEducationQry_be)) //Inserting (Applying) BE
                 {
-                    $insertQuery = "INSERT INTO selected_courses values(NULL,'$id','B.E',1)";
-                    if ($conn->query($insertQuery)){
-                        $msg = "<p style='text-align:center; color:green;'>Application Successful </p>";
-                    }
-                    else{
-                    $msg = "<p style='text-align:center; color:red;'>An Error Occured Contact SysAdmin</p>";
-                    }
+                    //$insertQuery = "INSERT INTO selected_courses values('$id','coursename',1)";
+                   // if ($conn->query($insertQuery)){
+                        $msg = "<p style='text-align:center; color:green;'>Submited successful, proceed to apply the course </p>";
+                   // }
+                    //else{
+                    //$msg = "<p style='text-align:center; color:red;'>An Error Occured Contact SysAdmin</p>";
+                    //}
                 }
                 else
                 {
@@ -127,6 +120,7 @@
                     <h3 class="panel-title"> <b>Educational Information</b> </h3>
                 </div>
                 <div class="panel-body">
+                <p style='text-align:center; color:green;'>If not available indicate <strong>N/A</strong> </p>
                     <div class="col-lg-12">
                         <div class="row">
                      <form action="educational_details_be.php" method="post">
@@ -134,21 +128,21 @@
 						<div class="row">
 							<div class="col-sm-6 form-group">
 								<label>High School Name</label>
-								<input type="text" name="country" placeholder="Enter Your High School Name here.." class="form-control" required <?php echo $a?>>
+								<input type="text" name="highSchool" placeholder="Enter Your High School Name here.." class="form-control" required <?php echo $a?>>
 							</div>
 							<div class="col-sm-6 form-group">
 								<label>High School Grade</label>
-								<input type="text" name="county" placeholder="Enter High school Grade here.." class="form-control" required <?php echo $a?>>
+								<input type="text" name="highGrade" placeholder="Enter High school Grade here.." class="form-control" required <?php echo $a?>>
 							</div>
 						</div>
                         <div class="row">
                         <div class="col-sm-6 form-group">
 								<label>Other School</label>
-								<input type="text" name="district" placeholder="Enter Your other school here.." class="form-control" required <?php echo $a?>>
+								<input type="text" name="otherSchool" placeholder="Enter Your other school here.." class="form-control" required <?php echo $a?>>
 							</div>
 						<div class="col-sm-6 form-group">
 								<label>Qualification</label>
-								<input type="text" name="idbirth" placeholder="Enter Your Qualification here.." class="form-control" required <?php echo $a?>>
+								<input type="text" name="qual" placeholder="Enter Your Qualification here.." class="form-control" required <?php echo $a?>>
 							</div>
 
                         <div>
@@ -156,7 +150,7 @@
 						<div class="row">
 							<div class="col-sm-6 form-group">
 								<label>Index Number</label>
-								<input type="text" placeholder="Enter Index Number Here.." name="nextofkin" class="form-control" required <?php echo $a?>>
+								<input type="text" placeholder="Enter Index Number Here.." name="indexNo" class="form-control" required <?php echo $a?>>
 							</div>
 						 </div>
                          <div class="panel panel-default">
@@ -171,116 +165,83 @@
 
                                 <div class="col-sm-3 form-group">
                                     <label> Mathematics </label>
-                                    <select name="math" id="" class="form-control" style="width:auto;" required <?php echo $a?>> 
-                                        <option value="Select">Select</option>
-                                        <option value="A">A</option>
-                                        <option value="B">B+</option>
-                                        <option value="B">B</option>
-                                        <option value="B-">B-</option>
-                                        <option value="C+">C+</option>
-                                        <option value="C">C</option>
-                                        <option value="C-">C-</option>
-                                    </select>
-                                </div>
+                                    <input type="text" name="math" size="5" class="form-control" style="width:auto;" required <?php echo $a?>> 
+                                 </div>
 
                                 <div class="col-sm-3 form-group">
                                     <label> English</label>
-                                    <select name="math" id="" class="form-control" style="width:auto;" required <?php echo $a?>> 
-                                        <option value="Select">Select</option>
-                                        <option value="A">A</option>
-                                        <option value="B">B+</option>
-                                        <option value="B">B</option>
-                                        <option value="B-">B-</option>
-                                        <option value="C+">C+</option>
-                                        <option value="C">C</option>
-                                        <option value="C-">C-</option>
-                                    </select>
+                                    <input type="text" name="eng" size="5" class="form-control" style="width:auto;" required <?php echo $a?>> 
+                                       
                                 </div>
 
                                 <div class="col-sm-3 form-group">
                                     <label> Kiswahili</label>
-                                    <select name="math" id="" class="form-control" style="width:auto;" required <?php echo $a?>> 
-                                        <option value="Select">Select</option>
-                                        <option value="A">A</option>
-                                        <option value="B">B+</option>
-                                        <option value="B">B</option>
-                                        <option value="B-">B-</option>
-                                        <option value="C+">C+</option>
-                                        <option value="C">C</option>
-                                        <option value="C-">C-</option>
-                                    </select>
+                                    <input type="text" name="kisw" size="5" class="form-control" style="width:auto;" required <?php echo $a?>> 
+                                        
                                 </div>
 
                                 <div class="col-sm-3 form-group">
                                     <label> Physics</label>
-                                    <select name="math" id="" class="form-control" style="width:auto;" required <?php echo $a?>> 
-                                        <option value="Select">Select</option>
-                                        <option value="A">A</option>
-                                        <option value="B">B+</option>
-                                        <option value="B">B</option>
-                                        <option value="B-">B-</option>
-                                        <option value="C+">C+</option>
-                                        <option value="C">C</option>
-                                        <option value="C-">C-</option>
-                                    </select>
+                                    <input type="text" name="phyc" size="5" class="form-control" style="width:auto;" required <?php echo $a?>> 
+                                      
                                 </div>
                                 <div class="col-sm-3 form-group">
                                     <label> Chemistry</label>
-                                    <select name="math" id="" class="form-control" style="width:auto;" required <?php echo $a?>> 
-                                        <option value="Select">Select</option>
-                                        <option value="A">A</option>
-                                        <option value="B">B+</option>
-                                        <option value="B">B</option>
-                                        <option value="B-">B-</option>
-                                        <option value="C+">C+</option>
-                                        <option value="C">C</option>
-                                        <option value="C-">C-</option>
-                                    </select>
+                                    <input type="text" name="chem" size="5" class="form-control" style="width:auto;" required <?php echo $a?>> 
+                                        
                                 </div>
                                 <div class="col-sm-3 form-group">
-                                    <label>Biology</label>
-                                    <select name="math" id="" class="form-control" style="width:auto;" required <?php echo $a?>> 
-                                        <option value="Select">Select</option>
-                                        <option value="A">A</option>
-                                        <option value="B">B+</option>
-                                        <option value="B">B</option>
-                                        <option value="B-">B-</option>
-                                        <option value="C+">C+</option>
-                                        <option value="C">C</option>
-                                        <option value="C-">C-</option>
-                                    </select>
+                                    <label>Business</label>
+                                    <input type="text" name="biz" size="5" class="form-control" style="width:auto;" required <?php echo $a?>> 
+                                        
                                 </div>
                                 <div class="col-sm-3 form-group">
-                                    <label> Geography </label>
-                                    <select name="math" id="" class="form-control" style="width:auto;" required <?php echo $a?>> 
-                                        <option value="Select">Select</option>
-                                        <option value="A">A</option>
-                                        <option value="B">B+</option>
-                                        <option value="B">B</option>
-                                        <option value="B-">B-</option>
-                                        <option value="C+">C+</option>
-                                        <option value="C">C</option>
-                                        <option value="C-">C-</option>
-                                    </select>
+                                    <label> Agriculture </label>
+                                    <input type="text" name="agri" size="5" class="form-control" style="width:auto;" required <?php echo $a?>> 
+                                       
                                 </div>
                                 <div class="col-sm-3 form-group">
-                                    <label> History </label>
-                                    <select name="math" id="" class="form-control" style="width:auto;" required <?php echo $a?>> 
-                                        <option value="Select">Select</option>
-                                        <option value="A">A</option>
-                                        <option value="B">B+</option>
-                                        <option value="B">B</option>
-                                        <option value="B-">B-</option>
-                                        <option value="C+">C+</option>
-                                        <option value="C">C</option>
-                                        <option value="C-">C-</option>
-                                    </select>
+                                    <label> Computer Science </label>
+                                    <input type="text" name="comp_sci" size="5" class="form-control" style="width:auto;" required <?php echo $a?>> 
+                                       
+                                </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-sm-3 form-group">
+                                    <label> Biology </label>
+                                    <input type="text" name="bio" size="5" class="form-control" style="width:auto;" required <?php echo $a?>> 
+                                        
+                                </div>
+                                <div class="col-sm-3 form-group">
+                                    <label> CRE </label>
+                                    <input type="text" name="cre" size="5" class="form-control" style="width:auto;" required <?php echo $a?>> 
+                                        
+                                </div>
+                                <div class="col-sm-3 form-group">
+                                    <label> History</label>
+                                    <input type="text" name="hist" size="5" class="form-control" style="width:auto;" required <?php echo $a?>> 
+                                        
+                                </div>
+                                <div class="col-sm-3 form-group">
+                                    <label> Geography</label>
+                                    <input type="text" name="geo" size="5" class="form-control" style="width:auto;" required <?php echo $a?>> 
+                                      
+                                </div>
+                                <div class="col-sm-3 form-group">
+                                    <label> French</label>
+                                    <input type="text" name="french" size="5" class="form-control" style="width:auto;" required <?php echo $a?>> 
+                                       
+                                </div>
+                                <div class="col-sm-3 form-group">
+                                    <label> Home Science</label>
+                                    <input type="text" name="home_sci" size="5" class="form-control" style="width:auto;" required <?php echo $a?>> 
+
                                 </div>
 
                             </div>
                         </div>
                     </div><br><br>
-						<input type="submit" style="color:#BD0006;" name="submitBioData" class="form-control btn btn-info">
+						<input type="submit" style="color:#BD0006;" name="submitEducationDetails_BE" class="form-control btn btn-info">
                             <?php echo $msg;?>
 					
 					</div>

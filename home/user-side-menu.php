@@ -15,6 +15,7 @@
           <a href="profile.php" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Profile<span class="badge"></span></a>
           <a href="bio_data.php" class="list-group-item"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Bio Data<span class="badge"></span></a>
           <a href="educational_details_be.php" class="list-group-item"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Educational Details <span class="badge"></span></a>
+          <a href="status.php" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Status<span class="badge"></span></a>
           <a href="apply.php" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Apply<span class="badge"></span></a>
           <a href="logout.php" class="list-group-item"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout <span class="badge"></span></a>
         </div>

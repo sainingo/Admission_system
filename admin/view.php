@@ -80,14 +80,11 @@ if(isset($_SESSION['email']))
 									<label>Email Address</label>
 									<input type="text" class="form-control" value="<?php echo $details[9]; ?> " readonly>
 								</div>
-								<div class="col-sm-4 form-group">
-									<label>Registration Date</label>
-									<input type="text" name="reg_date" class="form-control" value="<?php echo $details[11]; ?> " readonly>
-								</div>
+								
 							</div>
 						</div>
 					</div>
-					<button type="submit">Modify</button>
+					<button type="submit" href='view2.php?id=$addrow[0]'>Next</button>
 				</div>
 				
 			</div>

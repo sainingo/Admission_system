@@ -1,6 +1,6 @@
 <?php
     $databaseHost = "localhost";
     $databaseUsername = "root";
-    $databasePassword = "";
+    $databasePassword = "PhpAdmin@12";
     $databaseName = "admission2019";
 ?>

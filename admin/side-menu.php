@@ -67,9 +67,9 @@
     <div class="list-group">
         <a href="admin.php" class="list-group-item active main-color-bg">
         <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Sidemenu</a>
-        <a href="allrecords.php" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Registered Student Records <span class="badge"><?php echo $val;?></span></a>
-        <a href="records.php" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Applied Student Records <span class="badge"></span></a>
-        <a href="be_records.php" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> BE Student Records <span class="badge"><?php echo $val3;?></span></a>
+        <a href="allrecords.php" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> View Student Records <span class="badge"><?php echo $val;?></span></a>
+        <a href="allrecords1.php" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> View Educational details <span class="badge"></span></a> 
+        <a href="updateStatus.php" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Update Student Status <span class="badge"></span></a>
 <!--     <a href="test-questions.php" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Test <span class="badge">203</span></a> -->
          <a href="addCourse.php" class="list-group-item"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Course <span class="badge"><?php echo $val2;?> </span></a>
          <a href="logout.php" class="list-group-item"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout <span class="badge"</span></a>

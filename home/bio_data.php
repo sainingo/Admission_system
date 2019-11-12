@@ -49,12 +49,12 @@
                                    bio_data 
                                         VALUES                 
                                         ('$id',
-                                         '$cTry','$cTy','$dSt','$iDbth','$nKo',
+                                         '$cTry','$cTy','$dSt','$iDbth','$nOk',
                                          '$rL','$nKn',
                                          1)";
                 if ($conn->query($insertEducationQry))
                 {
-                            $msg = "Data Collected Successful. You Can Apply now";
+                            $msg = "Data Collected Successful. Proceed to Educational details";
                 }
                 else
                 {
@@ -82,11 +82,11 @@
 					<div class="col-sm-12">
 						<div class="row">
 							<div class="col-sm-6 form-group">
-								<label>County</label>
+								<label>Country</label>
 								<input type="text" name="country" placeholder="Enter County here.." class="form-control" required <?php echo $a?>>
 							</div>
 							<div class="col-sm-6 form-group">
-								<label>Country</label>
+								<label>County</label>
 								<input type="text" name="county" placeholder="Enter Country here.." class="form-control" required <?php echo $a?>>
 							</div>
 						</div>
@@ -117,7 +117,8 @@
 							</div>
 							
                         </div>
-						<input type="submit" style="color:#BD0006;" name="submitBioData" class="form-control btn btn-info">
+						
+                        <input class="btn btn-info" type="submit" name="submitBioData" value="Submit">
                             <?php echo $msg;?>
 					
 					</div>

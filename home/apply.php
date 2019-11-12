@@ -49,12 +49,12 @@
 			$msg = "<p style='text-align:center; color:red;'>Course Alredy Selected</p>";
 		}
 		else{
-			$insertQuery = "INSERT INTO selected_courses values(NULL,'$id','$selectedCourse',1)";
+			$insertQuery = "INSERT INTO selected_courses values('$id','$selectedCourse',1)";
 			if ($conn->query($insertQuery)){
 				$msg = "<p style='text-align:center; color:green;'>Application Successful </p>";
 			}
 			else{
-			$msg = "<p style='text-align:center; color:red;'>An Error Occured Contact SysAdmin</p>";
+			  $msg = "<p style='text-align:center; color:red;'>An Error Occured Contact SysAdmin</p>";
 			}
 		}
 		}

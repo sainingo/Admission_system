@@ -74,7 +74,10 @@
                     ]
                 });
             });
+         
         </script>
+        <script src="js/main.js"></script>
+          
     </head>
 
     <body>
@@ -94,7 +97,7 @@
         <section id="breadcrumb">
             <div class="container">
                 <ol class="breadcrumb">
-                    <li class="active">Records</li>
+                    <li class="active">Status</li>
                 </ol>
             </div>
         </section>
@@ -103,36 +106,23 @@
             <!-- Website Overview -->
             <div class="panel panel-default">
                 <div class="panel-heading main-color-bg">
-                    <h3 class="panel-title">Admissions Record</h3>
+                    <h3 class="panel-title">Update Admission Status</h3>
                 </div>
                 <div class="panel-body">
-                    <br/>
-                    <table id="record" class="table table-striped table-hover table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Std. ID</th>
-                                <th>Student Name</th>
-                                <th>Email</th>
-                                <th>Joined On</th>
-                            </tr>
-                        </thead>
-                        <?php
-                $mysqli = mysqli_connect($databaseHost,$databaseUsername,$databasePassword,$databaseName);
-                  $query = "select * from student_data";
-                  $result = mysqli_query($mysqli,$query);
-                  while($addrow = mysqli_fetch_array($result)){
-                    $newDate = date('d-M-Y',strtotime($addrow[11]));
-                    echo "<tr>";
-                    echo "<td>$addrow[0]</td>";
-                    echo "<td><a href='view.php?id=$addrow[0]' target='_blank'>" .$addrow[1] . "</a></td>";
-                    echo "<td>$addrow[9]</td>";
-                    echo "<td>$newDate</td>";
-                    echo "</tr>";
-                  }
-                
-            ?>
-                    </table>
-                    </form>
+                <div class="col-md-12">
+                  <div class="well dash-box">
+                     <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span>                 
+                     </h2>
+                     <select class="form-control" value="status" >
+                                    <option value="pending">Application Pending</option>
+                                    <option value="successful">Application Successful</option>
+                                    <option value="denied">Application Denied</option>
+                     </select><br>
+                     <input onClick ="onClick()" class="btn btn-info" type="button" id="updateStatus" value="Update Status">
+                  </div>
+               </div>
+                    
+                    
                 </div>
             </div>
         </div>

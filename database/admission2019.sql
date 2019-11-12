@@ -100,7 +100,7 @@ CREATE TABLE `education_information` (
   `high_school` varchar(255) NOT NULL,
   `high_school_Grade` varchar(70) NOT NULL,
   `other_school` varchar(70) NOT NULL,
-  `qualification` int(20) NOT NULL,
+  `qualification` varchar(20) NOT NULL,
   `index_no` varchar(30) NOT NULL,
   `math` varchar(10) NOT NULL,
   `english` varchar(10) NOT NULL,
@@ -135,9 +135,8 @@ INSERT INTO `education_information` (`ID`, `high_school`, `high_school_Grade`, `
 --
 
 CREATE TABLE `selected_courses` (
-  `S_ID` int(2) NOT NULL,
   `ID` int(3) NOT NULL,
-  `coursename` varchar(20) NOT NULL,
+  `coursename` varchar(50) NOT NULL,
   `isAvailable` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 --
