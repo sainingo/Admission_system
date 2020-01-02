@@ -1,9 +1,8 @@
-# Projectworlds Universirty Admission Portal
+# Kaimosi friends university Admission system
 
 
 
-This Admission portal is a final year University Project, probably will go live around in 2018. This project is made by the students for the students and the faculty as well
-
+This Admission portal is a third year University Project
 ## Expected Features
 
 - Register on Admission Portal
@@ -14,7 +13,7 @@ This Admission portal is a final year University Project, probably will go live 
 
 - Export documents PDF
 - View Student details
--  ~~Initiate Tests~~
+
 
 ## Installtion
 
@@ -28,3 +27,4 @@ This Admission portal is a final year University Project, probably will go live 
 - [Bootstrap](http://getbootstrap.com) - HTML enhanced for web apps!
 - [Core PHP](http://www.php.net/) PHP Version 7
 - [jQuery](https://jquery.com/) - JavaScript Framework
+-[mysql database]
