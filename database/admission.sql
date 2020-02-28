@@ -42,9 +42,9 @@ CREATE TABLE `admins` (
 -- Dumping data for table `admins`
 --
 
-INSERT INTO `admins` (`id`, `name`, `email`, `password`, `created_at`, `updated_at`, `isActive`) VALUES
-(1, 'Admin', 'kafuco@gmail.com', '4154', NULL, NULL, NULL),
-(2, 'Saningo', 'saningo@gmail.com', 'admin12', NULL, NULL, 1);
+-- INSERT INTO `admins` (`id`, `name`, `email`, `password`, `created_at`, `updated_at`, `isActive`) VALUES
+-- (1, 'Admin', 'kafuco@gmail.com', '4154', NULL, NULL, NULL),
+-- (2, 'Saningo', 'saningo@gmail.com', 'admin12', NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -194,37 +194,37 @@ ALTER TABLE `admins`
 --
 -- Indexes for table `courses`
 --
-ALTER TABLE `courses`
-  ADD PRIMARY KEY (`ID`),
-  ADD UNIQUE KEY `coursename` (`coursename`);
+-- ALTER TABLE `courses`
+--   ADD PRIMARY KEY (`ID`),
+--   ADD UNIQUE KEY `coursename` (`coursename`);
 
 --
 -- Indexes for table `education_information`
 --
-ALTER TABLE `education_information`
-  ADD PRIMARY KEY (`ID`);
+-- ALTER TABLE `education_information`
+--   ADD PRIMARY KEY (`ID`);
 
 --
 -- Indexes for table `bio data`
 --
-ALTER TABLE `bio_data`
-  ADD PRIMARY KEY (`ID`);
+-- ALTER TABLE `bio_data`
+--   ADD PRIMARY KEY (`ID`);
 
 --
 -- Indexes for table `selected_courses`
 --
-ALTER TABLE `selected_courses`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `bba_index_coursename` (`coursename`);
+-- ALTER TABLE `selected_courses`
+--   ADD PRIMARY KEY (`ID`),
+--   ADD KEY `bba_index_coursename` (`coursename`);
 
 --
 -- Indexes for table `student_data`
 --
-ALTER TABLE `student_data`
-  ADD PRIMARY KEY (`ID`),
-  ADD UNIQUE KEY `EMAIL` (`EMAIL`),
-  ADD KEY `stud_name_index` (`FIRSTNAME`),
-  ADD KEY `gender_stud` (`GENDER`);
+-- ALTER TABLE `student_data`
+--   ADD PRIMARY KEY (`ID`),
+--   ADD UNIQUE KEY `EMAIL` (`EMAIL`),
+--   ADD KEY `stud_name_index` (`FIRSTNAME`),
+--   ADD KEY `gender_stud` (`GENDER`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -233,18 +233,18 @@ ALTER TABLE `student_data`
 --
 -- AUTO_INCREMENT for table `admins`
 --
-ALTER TABLE `admins`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+-- ALTER TABLE `admins`
+--   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `courses`
 --
-ALTER TABLE `selected_courses`
-  MODIFY `ID` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+-- ALTER TABLE `selected_courses`
+--   MODIFY `ID` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT for table `education_information`
 --
-ALTER TABLE `education_information`
-  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+-- ALTER TABLE `education_information`
+--   MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `education_information_be`
 --
@@ -252,14 +252,14 @@ ALTER TABLE `bio_data`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `selected_courses`
---
-ALTER TABLE `courses`
-  MODIFY `ID` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+-- --
+-- ALTER TABLE `courses`
+--   MODIFY `ID` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 --
 -- AUTO_INCREMENT for table `student_data`
 --
-ALTER TABLE `student_data`
-  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;COMMIT;
+-- ALTER TABLE `student_data`
+--   MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
