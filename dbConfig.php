@@ -4,10 +4,7 @@ session_start();
 //$path = "../profile_images";
 // Database Connection
 
-$databaseHost = "localhost";
-$databaseUsername = "root";
-$databasePassword = "PhpAdmin@12";
-$databaseName = "admission2019";
+//connection code
 	
 	$conn = new PDO("mysql:host=$databaseHost;dbname=$databaseName;", $databaseUsername, $databasePassword);	
 	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
